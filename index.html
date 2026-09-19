@@ -83,16 +83,18 @@ section[id]{scroll-margin-top:60px}
 .panel.r .mand{left:calc(min(96vh,780px) / -2)}
 .gate.open .panel.l{transform:rotateY(-104deg)}
 .gate.open .panel.r{transform:rotateY(104deg)}
-.gate-mid{position:absolute;inset:0;display:grid;place-items:center;z-index:2;text-align:center;pointer-events:none;transition:opacity .7s}
-.gate.open .gate-mid{opacity:0}
+.gate-mid{position:absolute;inset:0;display:grid;place-items:center;z-index:2;text-align:center;pointer-events:none;transition:opacity .35s ease}
+.gate.open .gate-mid{opacity:0;pointer-events:none}
 .gate-mid .seal{width:min(300px,72vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#4A0E26 0%,#2A0716 70%);border:2px solid var(--gold);box-shadow:0 0 0 8px rgba(34,8,26,.7),0 0 0 9px var(--gold),0 0 60px rgba(242,159,5,.35);display:grid;place-content:center;gap:2px;opacity:0;transform:scale(.85);transition:opacity 1s,transform 1s}
 .gate.lit .seal{opacity:1;transform:none}
 .seal b{font-family:var(--script);font-weight:400;font-size:clamp(2.1rem,7vw,3rem);color:var(--gold-2);line-height:1.05}
 .seal i{font-family:var(--serif);font-size:1.15rem;color:var(--ivory);font-style:italic}
 .gate-diyas{position:absolute;left:0;right:0;top:calc(50% + min(150px,36vw) + 14px);display:flex;justify-content:center;gap:min(160px,40vw);opacity:0;transition:opacity 1s .3s}
 .gate.lit .gate-diyas{opacity:1}
+.gate.open .gate-diyas{opacity:0;pointer-events:none;transition:opacity .35s ease}
 .gate-diyas .diya{width:56px}
-.skip{position:absolute;left:0;right:0;bottom:6vh;text-align:center;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:rgba(251,241,220,.7);z-index:3;pointer-events:none}
+.skip{position:absolute;left:0;right:0;bottom:6vh;text-align:center;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:rgba(251,241,220,.7);z-index:3;pointer-events:none;transition:opacity .35s ease}
+.gate.open .skip{opacity:0;pointer-events:none}
 
 /* ---------- diya ---------- */
 .diya{position:relative;display:block;width:60px;aspect-ratio:64/60}
