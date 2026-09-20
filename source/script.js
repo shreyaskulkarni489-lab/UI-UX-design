@@ -18,6 +18,88 @@ $$('[data-mandala]').forEach(el=>el.innerHTML=mandala());
 const diyaSVG=`<svg viewBox="0 0 64 60" aria-hidden="true"><circle class="halo" cx="32" cy="22" r="26" fill="url(#haloGrad)"/><path d="M4 32C10 50 54 50 60 32C46 38 18 38 4 32Z" fill="url(#goldGrad)"/><path d="M4 32C1 30 0 27 2 25C8 28 12 30 16 31" fill="url(#goldGrad)"/><path d="M24 46h16v4a4 4 0 0 1-4 4h-8a4 4 0 0 1-4-4z" fill="#B98526"/><path d="M8 34C20 39 44 39 56 34" stroke="#8A5B12" stroke-width="1.2" fill="none" opacity=".7"/><path class="flame" d="M32 33C22 24 29 12 32 2C35 12 42 24 32 33Z" fill="url(#flameGrad)"/><path class="flame b" d="M32 32C27 26 30 20 32 15C34 20 37 26 32 32Z" fill="#FFF7D0" opacity=".9"/></svg>`;
 $$('[data-diya]').forEach(el=>el.innerHTML=diyaSVG);
 
+/* paisley (buta) gate border */
+function buta(x, y, rot=0, sc=1, flip=false){
+  const sx = (flip ? -sc : sc).toFixed(3);
+  const sy = sc.toFixed(3);
+  return `<g transform="translate(${x.toFixed(1)},${y.toFixed(1)}) rotate(${rot}) scale(${sx},${sy}) translate(-20,-30)">`
+    + `<path d="M20,58 C6,52 0,36 8,22 C13,13 20,10 19,2 C32,8 38,22 34,36 C31,48 26,55 20,58Z" fill="rgba(217,164,65,0.16)" stroke="#D9A441" stroke-width="1.6" stroke-linejoin="round"/>`
+    + `<path d="M20,50 C11,46 8,36 13,27 C16,22 21,20 21,14 C28,19 30,28 28,36 C26,43 24,47 20,50Z" fill="rgba(217,164,65,0.22)" stroke="#D9A441" stroke-width="1.1"/>`
+    + `<path d="M19,2 C21,-3 27,-3 28,2" fill="none" stroke="#D9A441" stroke-width="1.4" stroke-linecap="round"/>`
+    + `<circle cx="20" cy="40" r="2.2" fill="#F0CF86"/>`
+    + `<circle cx="17" cy="31" r="1.5" fill="#F0CF86"/>`
+    + `<circle cx="23" cy="30" r="1.5" fill="#F0CF86"/>`
+    + `<circle cx="20" cy="22" r="1.2" fill="#F0CF86"/>`
+    + `</g>`;
+}
+function drawDoorBorder(isLeft, W, H){
+  const m = 44, step = 46, sc = 0.62;
+  const isMobile = (window.innerWidth || document.documentElement.clientWidth || 1000) <= 600;
+  const dot = (x, y) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.2" fill="#D9A441" opacity="0.85"/>`;
+  let s = '';
+
+  if (isLeft) {
+    s += buta(m, m, 135, 1.0, false);
+    s += buta(m, H - m, -135, 1.0, false);
+  } else {
+    s += buta(W - m, m, 45, 1.0, false);
+    s += buta(W - m, H - m, -45, 1.0, false);
+  }
+
+  if (isLeft) {
+    let i = 0;
+    for (let x = m + step; x <= W - 30; x += step, i++) {
+      s += buta(x, m, 90, sc, i % 2 === 1);
+      if (x + step <= W - 30) s += dot(x + step / 2, m);
+    }
+  } else {
+    let i = 0;
+    for (let x = W - m - step; x >= 30; x -= step, i++) {
+      s += buta(x, m, 90, sc, i % 2 === 1);
+      if (x - step >= 30) s += dot(x - step / 2, m);
+    }
+  }
+
+  if (isLeft) {
+    let i = 0;
+    for (let x = m + step; x <= W - 30; x += step, i++) {
+      s += buta(x, H - m, -90, sc, i % 2 === 1);
+      if (x + step <= W - 30) s += dot(x + step / 2, H - m);
+    }
+  } else {
+    let i = 0;
+    for (let x = W - m - step; x >= 30; x -= step, i++) {
+      s += buta(x, H - m, -90, sc, i % 2 === 1);
+      if (x - step >= 30) s += dot(x - step / 2, H - m);
+    }
+  }
+
+  if (!isMobile) {
+    const colX = isLeft ? m : W - m;
+    const rot = isLeft ? 180 : 0;
+    let i = 0;
+    for (let y = m + step; y <= H - m - step; y += step, i++) {
+      s += buta(colX, y, rot, sc, i % 2 === 1);
+      if (y + step <= H - m - step) s += dot(colX, y + step / 2);
+    }
+  }
+
+  return `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-hidden="true">${s}</svg>`;
+}
+function buildGateBorders(){
+  const panelL = $('.panel.l'), panelR = $('.panel.r');
+  if (!panelL || !panelR) return;
+  const pzL = $('.panel.l .pz'), pzR = $('.panel.r .pz');
+  if (!pzL || !pzR) return;
+  const wL = panelL.clientWidth || (window.innerWidth * 0.502);
+  const hL = panelL.clientHeight || window.innerHeight;
+  const wR = panelR.clientWidth || (window.innerWidth * 0.502);
+  const hR = panelR.clientHeight || window.innerHeight;
+  pzL.innerHTML = drawDoorBorder(true, Math.round(wL), Math.round(hL));
+  pzR.innerHTML = drawDoorBorder(false, Math.round(wR), Math.round(hR));
+}
+buildGateBorders();
+
 /* toran (marigold garland) */
 function marigold(x,y,r,alt){
   const g=alt?'mrose':'mgold';
@@ -39,7 +121,7 @@ function buildToran(){
   }
   host.innerHTML=s+'</svg>';
 }
-buildToran(); let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{buildToran();buildVine()},200)});
+buildToran(); let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{buildToran();buildGateBorders();buildVine()},200)});
 
 /* arch: beads, rays, stars, plinth */
 (()=>{
@@ -161,7 +243,7 @@ buildToran(); let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTime
 /* wishes carousel + form */
 (()=>{
   const wishes=[
-    {t:'May your engagement mark the beginning of a lifetime filled with love, joy, and unforgettable moments together.',n:'Mahesh'},
+    {t:'May your wedding mark the beginning of a lifetime filled with love, joy, and unforgettable moments together.',n:'Mahesh'},
     {t:'Two beautiful souls, one beautiful beginning. Wishing you a lifetime of laughter and warm evenings together.',n:'Priya'},
     {t:'You two were made for each other. We cannot wait to dance at your wedding!',n:'Rohan'}
   ];

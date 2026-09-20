@@ -1,4 +1,4 @@
-# Ananya & Aarav - Royal Indian engagement invitation (redesign)
+# Ananya & Aarav - Royal Indian wedding invitation (redesign)
 
 A fully animated, responsive redesign of the original invitation landing page.
 Plain HTML, CSS and JavaScript. No build step and no dependencies.

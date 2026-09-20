@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ananya &amp; Aarav | Engagement Invitation</title>
-<meta name="description" content="Ananya Sharma and Aarav Verma are getting engaged on 31st October 2026 in Bengaluru.">
+<title>Ananya &amp; Aarav | Wedding Invitation</title>
+<meta name="description" content="Ananya Sharma and Aarav Verma are getting married on 31st October 2026 in Bengaluru.">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,7 +75,9 @@ section[id]{scroll-margin-top:60px}
   radial-gradient(circle at 1.5px 1.5px,rgba(240,207,134,.55) 1.4px,transparent 1.8px) 0 0/34px 34px,
   linear-gradient(180deg,#5A0F2A,#3B0A1F 55%,#2A0716);
   transition:transform 1.7s cubic-bezier(.65,.02,.2,1);backface-visibility:hidden}
-.panel::before{content:"";position:absolute;inset:14px;border:2px solid var(--gold);border-radius:6px;box-shadow:inset 0 0 0 6px rgba(34,8,26,.6),inset 0 0 0 7px rgba(217,164,65,.55)}
+.panel::before{content:"";position:absolute;inset:12px;border:2px solid var(--gold);border-radius:6px;box-shadow:inset 0 0 0 6px rgba(34,8,26,.6),inset 0 0 0 7px rgba(217,164,65,.55)}
+.pz{position:absolute;inset:0;pointer-events:none;z-index:1}
+.pz svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .panel.l{left:0;transform-origin:0 50%;box-shadow:inset -12px 0 30px rgba(0,0,0,.5)}
 .panel.r{right:0;transform-origin:100% 50%;box-shadow:inset 12px 0 30px rgba(0,0,0,.5)}
 .panel .mand{position:absolute;top:50%;width:min(96vh,780px);aspect-ratio:1;color:var(--gold);opacity:.75;transform:translateY(-50%)}
@@ -89,10 +91,6 @@ section[id]{scroll-margin-top:60px}
 .gate.lit .seal{opacity:1;transform:none}
 .seal b{font-family:var(--script);font-weight:400;font-size:clamp(2.1rem,7vw,3rem);color:var(--gold-2);line-height:1.05}
 .seal i{font-family:var(--serif);font-size:1.15rem;color:var(--ivory);font-style:italic}
-.gate-diyas{position:absolute;left:0;right:0;top:calc(50% + min(150px,36vw) + 14px);display:flex;justify-content:center;gap:min(160px,40vw);opacity:0;transition:opacity 1s .3s}
-.gate.lit .gate-diyas{opacity:1}
-.gate.open .gate-diyas{opacity:0;pointer-events:none;transition:opacity .35s ease}
-.gate-diyas .diya{width:56px}
 .skip{position:absolute;left:0;right:0;bottom:6vh;text-align:center;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:rgba(251,241,220,.7);z-index:3;pointer-events:none;transition:opacity .35s ease}
 .gate.open .skip{opacity:0;pointer-events:none}
 
@@ -430,10 +428,9 @@ section[id]{scroll-margin-top:60px}
 
 <!-- entrance gate -->
 <div class="gate" id="gate" role="presentation">
-  <div class="panel l"><div class="mand" data-mandala></div></div>
-  <div class="panel r"><div class="mand" data-mandala></div></div>
+  <div class="panel l"><div class="pz"></div><div class="mand" data-mandala></div></div>
+  <div class="panel r"><div class="pz"></div><div class="mand" data-mandala></div></div>
   <div class="gate-mid"><div class="seal"><b>Ananya</b><i>and</i><b>Aarav</b></div></div>
-  <div class="gate-diyas"><span class="diya" data-diya></span><span class="diya" data-diya></span></div>
   <p class="skip">Tap to enter</p>
 </div>
 
@@ -749,7 +746,7 @@ section[id]{scroll-margin-top:60px}
 
     <div class="hero-info">
       <svg class="orn fade" style="--d:2.1s" viewBox="0 0 240 24" aria-hidden="true"><use href="#ornament"/></svg>
-      <p class="lead fade" style="--d:2.2s">are getting engaged on</p>
+      <p class="lead fade" style="--d:2.2s">are getting married on</p>
       <p class="date fade" style="--d:2.35s">Saturday, 31st October 2026</p>
       <p class="venue fade" style="--d:2.5s">Hall Complex<small>Koramangala, Bengaluru</small></p>
       <div class="ctas fade" style="--d:2.7s">
@@ -768,7 +765,7 @@ section[id]{scroll-margin-top:60px}
       <h2 class="h2">Let the countdown begin</h2>
       <svg class="orn" viewBox="0 0 240 24" aria-hidden="true"><use href="#ornament"/></svg>
     </div>
-    <div class="cd" data-reveal style="--rd:.15s" role="timer" aria-label="Time until the engagement">
+    <div class="cd" data-reveal style="--rd:.15s" role="timer" aria-label="Time until the wedding">
       <span class="diya" data-diya></span>
       <div class="tile"><span class="num" id="cd-d">00</span><span class="lab">Days</span></div>
       <div class="tile"><span class="num" id="cd-h">00</span><span class="lab">Hours</span></div>
@@ -776,7 +773,7 @@ section[id]{scroll-margin-top:60px}
       <div class="tile"><span class="num" id="cd-s">00</span><span class="lab">Secs</span></div>
       <span class="diya" data-diya></span>
     </div>
-    <p class="cd-note" data-reveal style="--rd:.3s">until the Ring Ceremony at 11:00 AM</p>
+    <p class="cd-note" data-reveal style="--rd:.3s">until the wedding ceremony begins</p>
   </div>
 </section>
 
@@ -851,19 +848,19 @@ section[id]{scroll-margin-top:60px}
 <section class="sec night sched" id="schedule">
   <div class="wrap">
     <div class="sec-head" data-reveal>
-      <h2 class="h2">Engagement celebration begins</h2>
+      <h2 class="h2">Wedding celebrations begin</h2>
       <svg class="orn" viewBox="0 0 240 24" aria-hidden="true" style="color:var(--gold)"><use href="#ornament"/></svg>
     </div>
     <div class="tl" id="tl">
       <svg class="vine" id="vine" aria-hidden="true"></svg>
       <div class="ev">
-        <div class="ecard"><div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3"><circle cx="18" cy="30" r="12"/><circle cx="30" cy="30" r="12"/><path d="M24 4l6 7-6 8-6-8z" fill="currentColor" stroke="none"/></svg></div><div><p class="etime">11:00 AM</p><p class="ename">Ring Ceremony</p></div></div><span class="stub"></span>
+        <div class="ecard"><div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="24" rx="4" ry="13"/><path d="M12 11c8-2 20-2 24 0v26c-4 2-16 2-24 0z"/><ellipse cx="36" cy="24" rx="4" ry="13"/><path d="M12 11l24 13M12 24l24 13M12 37l24-13M12 24l24-13" stroke-width="1.8" opacity=".85"/></svg></div><div><p class="etime">10:00 AM</p><p class="ename">Baraat Welcome</p></div></div><span class="stub"></span>
       </div>
       <div class="ev">
-        <div class="ecard"><div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M8 40V26h32v14zM12 26v-6h24v6M24 20v-6"/><path d="M24 14c-3-3-1-6 0-8 1 2 3 5 0 8z" fill="currentColor" stroke="none"/><path d="M8 33c4 3 8 3 12 0s8-3 12 0 6 2 8 0"/></svg></div><div><p class="etime">11:30 AM</p><p class="ename">Cake Cutting</p></div></div><span class="stub"></span>
+        <div class="ecard"><div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3"><circle cx="18" cy="30" r="12"/><circle cx="30" cy="30" r="12"/><path d="M24 4l6 7-6 8-6-8z" fill="currentColor" stroke="none"/></svg></div><div><p class="etime">11:00 AM</p><p class="ename">Wedding Ceremony</p></div></div><span class="stub"></span>
       </div>
       <div class="ev">
-        <div class="ecard"><div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="24" cy="26" r="15"/><circle cx="24" cy="26" r="7"/><path d="M24 4v3M8 8l2 2M40 8l-2 2"/></svg></div><div><p class="etime">01:00 PM</p><p class="ename">Lunch</p></div></div><span class="stub"></span>
+        <div class="ecard"><div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="24" cy="26" r="15"/><circle cx="24" cy="26" r="7"/><path d="M24 4v3M8 8l2 2M40 8l-2 2"/></svg></div><div><p class="etime">01:00 PM</p><p class="ename">Wedding Lunch</p></div></div><span class="stub"></span>
       </div>
     </div>
   </div>
@@ -959,6 +956,88 @@ $$('[data-mandala]').forEach(el=>el.innerHTML=mandala());
 const diyaSVG=`<svg viewBox="0 0 64 60" aria-hidden="true"><circle class="halo" cx="32" cy="22" r="26" fill="url(#haloGrad)"/><path d="M4 32C10 50 54 50 60 32C46 38 18 38 4 32Z" fill="url(#goldGrad)"/><path d="M4 32C1 30 0 27 2 25C8 28 12 30 16 31" fill="url(#goldGrad)"/><path d="M24 46h16v4a4 4 0 0 1-4 4h-8a4 4 0 0 1-4-4z" fill="#B98526"/><path d="M8 34C20 39 44 39 56 34" stroke="#8A5B12" stroke-width="1.2" fill="none" opacity=".7"/><path class="flame" d="M32 33C22 24 29 12 32 2C35 12 42 24 32 33Z" fill="url(#flameGrad)"/><path class="flame b" d="M32 32C27 26 30 20 32 15C34 20 37 26 32 32Z" fill="#FFF7D0" opacity=".9"/></svg>`;
 $$('[data-diya]').forEach(el=>el.innerHTML=diyaSVG);
 
+/* paisley (buta) gate border */
+function buta(x, y, rot=0, sc=1, flip=false){
+  const sx = (flip ? -sc : sc).toFixed(3);
+  const sy = sc.toFixed(3);
+  return `<g transform="translate(${x.toFixed(1)},${y.toFixed(1)}) rotate(${rot}) scale(${sx},${sy}) translate(-20,-30)">`
+    + `<path d="M20,58 C6,52 0,36 8,22 C13,13 20,10 19,2 C32,8 38,22 34,36 C31,48 26,55 20,58Z" fill="rgba(217,164,65,0.16)" stroke="#D9A441" stroke-width="1.6" stroke-linejoin="round"/>`
+    + `<path d="M20,50 C11,46 8,36 13,27 C16,22 21,20 21,14 C28,19 30,28 28,36 C26,43 24,47 20,50Z" fill="rgba(217,164,65,0.22)" stroke="#D9A441" stroke-width="1.1"/>`
+    + `<path d="M19,2 C21,-3 27,-3 28,2" fill="none" stroke="#D9A441" stroke-width="1.4" stroke-linecap="round"/>`
+    + `<circle cx="20" cy="40" r="2.2" fill="#F0CF86"/>`
+    + `<circle cx="17" cy="31" r="1.5" fill="#F0CF86"/>`
+    + `<circle cx="23" cy="30" r="1.5" fill="#F0CF86"/>`
+    + `<circle cx="20" cy="22" r="1.2" fill="#F0CF86"/>`
+    + `</g>`;
+}
+function drawDoorBorder(isLeft, W, H){
+  const m = 44, step = 46, sc = 0.62;
+  const isMobile = (window.innerWidth || document.documentElement.clientWidth || 1000) <= 600;
+  const dot = (x, y) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.2" fill="#D9A441" opacity="0.85"/>`;
+  let s = '';
+
+  if (isLeft) {
+    s += buta(m, m, 135, 1.0, false);
+    s += buta(m, H - m, -135, 1.0, false);
+  } else {
+    s += buta(W - m, m, 45, 1.0, false);
+    s += buta(W - m, H - m, -45, 1.0, false);
+  }
+
+  if (isLeft) {
+    let i = 0;
+    for (let x = m + step; x <= W - 30; x += step, i++) {
+      s += buta(x, m, 90, sc, i % 2 === 1);
+      if (x + step <= W - 30) s += dot(x + step / 2, m);
+    }
+  } else {
+    let i = 0;
+    for (let x = W - m - step; x >= 30; x -= step, i++) {
+      s += buta(x, m, 90, sc, i % 2 === 1);
+      if (x - step >= 30) s += dot(x - step / 2, m);
+    }
+  }
+
+  if (isLeft) {
+    let i = 0;
+    for (let x = m + step; x <= W - 30; x += step, i++) {
+      s += buta(x, H - m, -90, sc, i % 2 === 1);
+      if (x + step <= W - 30) s += dot(x + step / 2, H - m);
+    }
+  } else {
+    let i = 0;
+    for (let x = W - m - step; x >= 30; x -= step, i++) {
+      s += buta(x, H - m, -90, sc, i % 2 === 1);
+      if (x - step >= 30) s += dot(x - step / 2, H - m);
+    }
+  }
+
+  if (!isMobile) {
+    const colX = isLeft ? m : W - m;
+    const rot = isLeft ? 180 : 0;
+    let i = 0;
+    for (let y = m + step; y <= H - m - step; y += step, i++) {
+      s += buta(colX, y, rot, sc, i % 2 === 1);
+      if (y + step <= H - m - step) s += dot(colX, y + step / 2);
+    }
+  }
+
+  return `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-hidden="true">${s}</svg>`;
+}
+function buildGateBorders(){
+  const panelL = $('.panel.l'), panelR = $('.panel.r');
+  if (!panelL || !panelR) return;
+  const pzL = $('.panel.l .pz'), pzR = $('.panel.r .pz');
+  if (!pzL || !pzR) return;
+  const wL = panelL.clientWidth || (window.innerWidth * 0.502);
+  const hL = panelL.clientHeight || window.innerHeight;
+  const wR = panelR.clientWidth || (window.innerWidth * 0.502);
+  const hR = panelR.clientHeight || window.innerHeight;
+  pzL.innerHTML = drawDoorBorder(true, Math.round(wL), Math.round(hL));
+  pzR.innerHTML = drawDoorBorder(false, Math.round(wR), Math.round(hR));
+}
+buildGateBorders();
+
 /* toran (marigold garland) */
 function marigold(x,y,r,alt){
   const g=alt?'mrose':'mgold';
@@ -980,7 +1059,7 @@ function buildToran(){
   }
   host.innerHTML=s+'</svg>';
 }
-buildToran(); let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{buildToran();buildVine()},200)});
+buildToran(); let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{buildToran();buildGateBorders();buildVine()},200)});
 
 /* arch: beads, rays, stars, plinth */
 (()=>{
@@ -1102,7 +1181,7 @@ buildToran(); let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTime
 /* wishes carousel + form */
 (()=>{
   const wishes=[
-    {t:'May your engagement mark the beginning of a lifetime filled with love, joy, and unforgettable moments together.',n:'Mahesh'},
+    {t:'May your wedding mark the beginning of a lifetime filled with love, joy, and unforgettable moments together.',n:'Mahesh'},
     {t:'Two beautiful souls, one beautiful beginning. Wishing you a lifetime of laughter and warm evenings together.',n:'Priya'},
     {t:'You two were made for each other. We cannot wait to dance at your wedding!',n:'Rohan'}
   ];
